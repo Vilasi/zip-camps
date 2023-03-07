@@ -1,0 +1,25 @@
+{
+  "name": "zip-camps",
+  "version": "1.0.0",
+  "description": "A webapp that lets users create accounts and upload reviews about campsites they've stayed at around the world.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vilasi/zip-camps.git"
+  },
+  "author": "Joe Vilasi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vilasi/zip-camps/issues"
+  },
+  "homepage": "https://github.com/Vilasi/zip-camps#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^7.0.1"
+  }
+}
