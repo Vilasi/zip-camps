@@ -1,4 +1,4 @@
-//require mongoose
+//* THIS IS OUR CAMPGROUND SCHEMA AND MODEL
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

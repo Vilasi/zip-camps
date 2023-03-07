@@ -6,6 +6,7 @@ const url = require('url');
 //* Import Models
 const Campground = require('./models/campground.js');
 // const { mainModule } = require('process');
+//* Import Seed Data
 
 //*Connect to Mongoose
 main().catch((err) => console.log(err));
