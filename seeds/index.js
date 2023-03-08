@@ -2,6 +2,10 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const Campground = require('../models/campground');
+const cities = require('./cities');
+// const seedHelper = require('./seedHelpers');
+const { descriptors, places } = require('./seedHelpers');
+// console.log(cities);
 
 //*Connect to db
 
@@ -26,25 +30,23 @@ async function seedMany() {
   await Campground.deleteMany({});
 
   for (let i = 0; i < 50; i++) {
-    const c = new Campground({
+    const random999 = Math.floor(Math.random() * 1000);
+    const randomDescriptor =
+      descriptors[Math.floor(Math.random() * descriptors.length)];
+    const randomPlace = places[Math.floor(Math.random() * places.length)];
+
+    const camp = new Campground({
       title: 'test',
       price: 'test',
-      description: 'test',
-      location: 'test',
+      description: `${randomDescriptor} ${randomPlace}`,
+      location: `${cities[random999].city}, ${cities[random999].state}`,
     });
 
     //* Note: Since we're using await, .save() does not need a .then or .exec() tacked on
-    await c.save();
+    await camp.save();
   }
 }
-seedMany();
-
-// seedMany()
-//   .then((res) => {
-//     console.log('All data removed');
-//     console.log(res);
-//   })
-//   .catch((err) => {
-//     console.log('Error removing data in seeds/index.js');
-//     console.log(err);
-//   });
+seedMany().then(() => {
+  //* Closes the connection at the end of creating the seed data
+  mongoose.connection.close();
+});
