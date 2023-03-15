@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <h1>Create a new camp</h1>
+    <div>
+      <a href="/campgrounds">Return to All Campgrounds</a>
+    </div>
+    <form action="/campgrounds" method="post">
+      <!--* Title -->
+      <div>
+        <!--* the name is titled as thus so as to group these inputs together -->
+        <!--* This will come in handy when handling our data inside of the server app -->
+        <!--* The name will have campground, and so therefore will be more readable/comprehensible -->
+        <!--* This has a similar effect to creating an object named 'campground' abd setting the parameters 'title' and 'location' -->
+        <label for="title">Title</label>
+        <input type="text" name="campground[title]" id="title" />
+      </div>
+
+      <div>
+        <label for="location">Location</label>
+        <input type="text" name="campground[location]" id="location" />
+      </div>
+
+      <button type="submit">Add campground</button>
+    </form>
+  </body>
+</html>

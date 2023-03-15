@@ -3,15 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Zip Camps</title>
+    <title>Campgrounds</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="" />
   </head>
   <body>
-    <h1>Welcome to Zip Camps!</h1>
-    <a href="/campgrounds">Proceed to Camps!</a>
-
-    <script src="" async defer></script>
+    <h1>View All Campgrounds!</h1>
+    <div>
+      <a href="/campgrounds/new">Make new campground</a>
+    </div>
+    <ul>
+      <% for (let camp of camps) {%>
+      <li>
+        <a href="/campgrounds/<%= camp._id %>"><%= camp.title %></a>
+      </li>
+      <% } %>
+    </ul>
   </body>
 </html>
